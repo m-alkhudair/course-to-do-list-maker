@@ -28,19 +28,15 @@ const CourseInput = (props) => {
     props.onAddGoal(enteredValue);
   };
 
-// in-line styles have presedence so they will override other styles, even when using the same style as the original css file in the inline style attribute there is duplication.
+  //We got rid of the in-line styles find them in github date 19/01/22
+  //better this way because in-line overrides everything and can make duplicate styles
+  //pay attention to the className attribute!
+  // you can repeat the same technique to make more dynamically added classes
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
-        <input
-          style={{
-            borderColor: !isValid ? "red" : "#ccc",
-            background: !isValid ? "salmon" : "transparent",
-          }}
-          type="text"
-          onChange={goalInputChangeHandler}
-        />
+      <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
+        <label>Course Goal</label>
+        <input type="text" onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>

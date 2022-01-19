@@ -22,3 +22,15 @@
   background: #fad0ec;
   border-color: #8b005d;
 }
+
+/* if the .form-control <div> has an .invalid class then target the input styles within */
+/* no space btw them means they're both on the same element */
+.form-control.invalid input {
+  border-color: red;
+  background-color: #ffd7d7;
+}
+
+/* also target the label */
+.form-control.invalid label {
+  color: red;
+}
