@@ -9,6 +9,9 @@ import styled from "styled-components";
 // here there's not need for classes so we tweaked the css code we coppied, remove selectors, and for psuedo-selectors add &
 // NOTES ON PROPS! the button returned will by default applies all the props we are passing!
 const Button = styled.button`
+  // default btn width
+  width: 100%;
+
   font: inherit;
   padding: 0.5rem 1.5rem;
   border: 1px solid #8b005d;
@@ -16,6 +19,11 @@ const Button = styled.button`
   background: #8b005d;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
   cursor: pointer;
+
+  // for devices larger than mobile
+  @media (min-width: 768px) {
+    width: auto;
+  }
 
   &:focus {
     outline: none;
